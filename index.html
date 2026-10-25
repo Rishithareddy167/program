@@ -1,44 +1,187 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to SDSE Lab</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: lightblue;
-            text-align: center;
             font-family: Arial, sans-serif;
-            padding-top: 150px;
+            background: linear-gradient(135deg, #141e30, #243b55, #6a11cb);
+            color: white;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.25);
+            border-bottom: 2px solid #00e5ff;
+        }
+
+        header h2 {
+            color: #00e5ff;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            padding: 60px 20px;
+        }
+
+        .git-icon {
+            font-size: 65px;
+            margin-bottom: 15px;
         }
 
         h1 {
-            color: darkblue;
-            font-size: 45px;
+            font-size: 42px;
+            color: #ffd166;
+            margin-bottom: 20px;
         }
 
-        p {
-            color: darkgreen;
-            font-size: 24px;
+        .intro {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 650px;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #00e5ff;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            display: inline-block;
+            text-align: left;
+            line-height: 2;
+            font-size: 17px;
         }
 
         button {
-            background-color: darkblue;
+            background: #ff6b35;
             color: white;
-            padding: 12px 25px;
+            padding: 14px 28px;
             border: none;
-            border-radius: 8px;
-            font-size: 18px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: bold;
             cursor: pointer;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffd166;
+            color: #141e30;
+            transform: scale(1.05);
+        }
+
+        #message {
+            color: #7cffcb;
+            font-size: 19px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #ddd;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            .intro {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Welcome to SDSE Lab!</h1>
-    <p>Learn, Explore, and Create.</p>
-    <button onclick="alert('Welcome to SDSE Lab!')">
-        Get Started
-    </button>
+    <header>
+        <h2>SDSE LAB</h2>
+        <p>Learn • Practice • Innovate</p>
+    </header>
+
+    <div class="container">
+
+        <div class="git-icon">🔀</div>
+
+        <h1>Welcome to SDSE Lab!</h1>
+
+        <p class="intro">
+            Today, we are learning about <strong>Git and GitHub!</strong><br>
+            Let's explore version control and discover how developers
+            manage their projects.
+        </p>
+
+        <div class="card">
+            <h2>🚀 What Will We Learn Today?</h2>
+
+            <ul>
+                <li>What is Git and why do we use it?</li>
+                <li>Creating a Git repository</li>
+                <li>Adding and committing files</li>
+                <li>Understanding GitHub repositories</li>
+                <li>Uploading projects to GitHub</li>
+                <li>Hosting websites using GitHub Pages</li>
+            </ul>
+        </div>
+
+        <button onclick="showMessage()">
+            Start Learning
+        </button>
+
+        <button onclick="showGitCommands()">
+            Explore Git Commands
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+    <footer>
+        <p>SDSE Lab | Learn Git Today, Build Projects Tomorrow!</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerHTML =
+                "🎉 Welcome! Let's begin our Git learning journey!";
+        }
+
+        function showGitCommands() {
+            document.getElementById("message").innerHTML =
+                "git init — Create a repository<br>" +
+                "git add . — Stage your files<br>" +
+                "git commit -m \"First commit\" — Save a version<br>" +
+                "git push — Upload changes to GitHub";
+        }
+    </script>
 
 </body>
 </html>
+
